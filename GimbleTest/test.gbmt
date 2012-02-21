@@ -1,0 +1,6 @@
+texture:DiffuseMap=shark_model/textures/body.dds
+texture:NormalMap=shark_model/textures/normal.dds
+float:SpecularPower=50
+float2:TestFloat2=0.123 4.567
+float3:TestFloat3=1 2 3
+float4:TestFloat4=4 5 6 7

@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Script">
+      <UniqueIdentifier>{22f47ca9-20c5-4a6b-9bb0-27bceadbeb31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Script">
+      <UniqueIdentifier>{7857eb17-6c87-4fd2-9c91-1e156a576556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics">
+      <UniqueIdentifier>{1e3a58b5-3694-49df-831d-486ed149c22b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics">
+      <UniqueIdentifier>{01d63766-2520-44f9-8299-f99d8668b62a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\D3D11">
+      <UniqueIdentifier>{3d02ba00-d7f8-4f5c-9baa-e6eb3c7cb8a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\D3D11">
+      <UniqueIdentifier>{2ed52b33-4690-4152-b520-0bc6719bcddc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Physics">
+      <UniqueIdentifier>{1b93746b-489a-487d-b998-98579f1379f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Physics">
+      <UniqueIdentifier>{d89afb7b-796c-460b-9fc9-1a1de9ae4b14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Resource Files">
+      <UniqueIdentifier>{ab73536a-f756-46c3-94c7-59bd303219cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{57c530c9-7dfc-489c-974a-1c9c61b4347e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{9b81a0d2-2dae-43c3-898f-ebe78fecc2c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{f0e0ff91-e008-43f5-b386-46e197bb0cf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Input">
+      <UniqueIdentifier>{1a221c02-73ff-4672-ba8d-dfac782076b5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\GimbleReqs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Script\GimbleScriptFunctionContext.h">
+      <Filter>Header Files\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Script\GimbleScriptFunction.h">
+      <Filter>Header Files\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Script\GimbleScriptClass.h">
+      <Filter>Header Files\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Script\GimbleScriptEngine.h">
+      <Filter>Header Files\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Script\GimbleLuaScriptEngine.h">
+      <Filter>Header Files\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleSingleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleVertexElement.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleInputLayout.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleBuffer.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleColor.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleDepthStencil.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimblePixelFormat.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimblePrimitiveTopology.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleMath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleVector2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleVector3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleVector4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleMatrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleQuaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleMutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleResourceLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleResourceLocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleResourceStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleResourceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleLogDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleMesh.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleModel.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleFileResourceLocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleFileResourceStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleModelLoader.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleMultiMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleRenderTarget.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleShader.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleShaderLoader.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleMulti.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleMultiDepthStencil.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleMultiRenderTarget.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleMultiBuffer.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleTexture.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleRenderSystem.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleRenderWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleSysUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleStringUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleFileLogDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleTextureLoader.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Buffer.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Reqs.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11DepthStencil.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Inputlayout.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11RenderSystem.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11RenderTarget.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11ShaderLoader.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Texture.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11TextureLoader.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Utils.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleComputeShader.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleComputeShaderLoader.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11ComputeShader.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11ComputeShaderLoader.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleTransform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleMPR.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleCollisionShape.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleContact.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleAABB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleCollisionObject.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleBoxShape.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleCollisionWorld.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleSimulator.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleRigidBody.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleCollisionSolver.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleContactManifold.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleBroadphase.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleSAP.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimblePairCache.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GimbleProfiler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleSphereShape.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\GimbleEngine.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\GimbleApp.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Input\GimbleInputSystem.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleJoint.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics\GimbleRevoluteJoint.h">
+      <Filter>Header Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleMaterial.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleMaterialLoader.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleDepthStencilState.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11DepthStencilState.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleRasterizerState.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11RasterizerState.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleBlendState.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11BlendState.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleComparisonFunc.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleSampler.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Sampler.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\GimbleShaderResourceGroup.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11ShaderResourceGroup.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Shader.h">
+      <Filter>Header Files\Graphics\D3D11</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Script\GimbleScriptFunctionContext.cpp">
+      <Filter>Source Files\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Script\GimbleScriptFunction.cpp">
+      <Filter>Source Files\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Script\GimbleScriptEngine.cpp">
+      <Filter>Source Files\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Script\GimbleLuaScriptEngine.cpp">
+      <Filter>Source Files\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GimbleInputLayout.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GimbleColor.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleMath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleMutex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleQuaternion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleResource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleResourceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleTimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleVector2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleVector3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleVector4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleFileResourceStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleFileResourceLocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleMultiMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleSysUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleRenderWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GimbleMesh.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GimbleModel.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GimbleModelLoader.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GimbleRenderSystem.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GimbleShader.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GimbleTexture.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleFileLogDevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11Buffer.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11DepthStencil.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11InputLayout.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11RenderSystem.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11RenderTarget.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11Shader.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11ShaderLoader.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11Texture.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11TextureLoader.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GimbleComputeShader.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11ComputeShader.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11ComputeShaderLoader.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleMPR.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleAABB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleBoxShape.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleCollisionObject.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleCollisionShape.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleCollisionWorld.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleSimulator.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleRigidBody.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleCollisionSolver.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleContactManifold.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleBroadphase.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleSAP.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimblePairCache.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GimbleProfiler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleSphereShape.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\GimbleEngine.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input\GimbleInputSystem.cpp">
+      <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physics\GimbleRevoluteJoint.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GimbleMaterial.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\GimbleMaterialLoader.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11DepthStencilState.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11RasterizerState.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11BlendState.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11Sampler.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11ShaderResourceGroup.cpp">
+      <Filter>Source Files\Graphics\D3D11</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

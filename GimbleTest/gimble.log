@@ -1,0 +1,10 @@
+INFO: Log created
+INFO: Loaded config from file [gimble.cfg]
+INFO: D3D11 RenderSystem created
+INFO: D3D11 RenderSystem initialization
+INFO: D3D11 RenderSystem initialization completed
+INFO: PhysicsTestApp initialising
+INFO: Engine main loop commencing
+INFO: Engine main loop ended
+INFO: PhysicsTestApp shutting down
+INFO: Saved config to file [gimble.cfg]
