@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{46410483-1B5B-41E4-92C5-6CCBD31D8D4B}</ProjectGuid>
+    <RootNamespace>Gimble</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>GIMBLE_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\include;C:\Users\Ralph\Documents\Visual Studio 2010\Projects\Lua\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Samples\C++\Effects11\Inc</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Ralph\Documents\Visual Studio 2010\Projects\Lua\lib\$(ConfigurationName);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Samples\C++\Effects11\$(ConfigurationName)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lua5.1.lib;d3d10.lib;d3d10_1.lib;d3dx10.lib;d3d11.lib;d3dx11.lib;d3dcompiler.lib;dxerr.lib;Effects11.lib;dinput8.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>GIMBLE_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\include;C:\Users\Ralph\Documents\Visual Studio 2010\Projects\Lua\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Samples\C++\Effects11\Inc</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\Ralph\Documents\Visual Studio 2010\Projects\Lua\lib\$(ConfigurationName);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Samples\C++\Effects11\$(ConfigurationName)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lua5.1.lib;d3d10.lib;d3d10_1.lib;d3dx10.lib;d3d11.lib;d3dx11.lib;d3dcompiler.lib;dxerr.lib;Effects11.lib;dinput8.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Game\GimbleApp.h" />
+    <ClInclude Include="include\Game\GimbleEngine.h" />
+    <ClInclude Include="include\GimbleAABB.h" />
+    <ClInclude Include="include\GimbleConfig.h" />
+    <ClInclude Include="include\GimbleFileLogDevice.h" />
+    <ClInclude Include="include\GimbleFileResourceLocator.h" />
+    <ClInclude Include="include\GimbleFileResourceStream.h" />
+    <ClInclude Include="include\GimbleLinkedList.h" />
+    <ClInclude Include="include\GimbleLog.h" />
+    <ClInclude Include="include\GimbleLogDevice.h" />
+    <ClInclude Include="include\GimbleMath.h" />
+    <ClInclude Include="include\GimbleMatrix.h" />
+    <ClInclude Include="include\GimbleMulti.h" />
+    <ClInclude Include="include\GimbleMultiMap.h" />
+    <ClInclude Include="include\GimbleMutex.h" />
+    <ClInclude Include="include\GimbleProfiler.h" />
+    <ClInclude Include="include\GimbleQuaternion.h" />
+    <ClInclude Include="include\GimbleRenderWindow.h" />
+    <ClInclude Include="include\GimbleReqs.h" />
+    <ClInclude Include="include\GimbleResource.h" />
+    <ClInclude Include="include\GimbleResourceLoader.h" />
+    <ClInclude Include="include\GimbleResourceLocator.h" />
+    <ClInclude Include="include\GimbleResourceManager.h" />
+    <ClInclude Include="include\GimbleResourceStream.h" />
+    <ClInclude Include="include\GimbleSingleton.h" />
+    <ClInclude Include="include\GimbleStringUtils.h" />
+    <ClInclude Include="include\GimbleSysUtils.h" />
+    <ClInclude Include="include\GimbleThread.h" />
+    <ClInclude Include="include\GimbleTimer.h" />
+    <ClInclude Include="include\GimbleTransform.h" />
+    <ClInclude Include="include\GimbleVector2.h" />
+    <ClInclude Include="include\GimbleVector3.h" />
+    <ClInclude Include="include\GimbleVector4.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11BlendState.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Buffer.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11ComputeShader.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11ComputeShaderLoader.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11DepthStencil.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11DepthStencilState.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Inputlayout.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11RasterizerState.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11RenderSystem.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11RenderTarget.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Reqs.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Sampler.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Shader.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11ShaderLoader.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11ShaderResourceGroup.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Texture.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11TextureLoader.h" />
+    <ClInclude Include="include\Graphics\D3D11\GimbleD3D11Utils.h" />
+    <ClInclude Include="include\Graphics\GimbleBlendState.h" />
+    <ClInclude Include="include\Graphics\GimbleBuffer.h" />
+    <ClInclude Include="include\Graphics\GimbleColor.h" />
+    <ClInclude Include="include\Graphics\GimbleComparisonFunc.h" />
+    <ClInclude Include="include\Graphics\GimbleComputeShader.h" />
+    <ClInclude Include="include\Graphics\GimbleComputeShaderLoader.h" />
+    <ClInclude Include="include\Graphics\GimbleDepthStencil.h" />
+    <ClInclude Include="include\Graphics\GimbleDepthStencilState.h" />
+    <ClInclude Include="include\Graphics\GimbleInputLayout.h" />
+    <ClInclude Include="include\Graphics\GimbleMaterial.h" />
+    <ClInclude Include="include\Graphics\GimbleMaterialLoader.h" />
+    <ClInclude Include="include\Graphics\GimbleMesh.h" />
+    <ClInclude Include="include\Graphics\GimbleModel.h" />
+    <ClInclude Include="include\Graphics\GimbleModelLoader.h" />
+    <ClInclude Include="include\Graphics\GimbleMultiBuffer.h" />
+    <ClInclude Include="include\Graphics\GimbleMultiDepthStencil.h" />
+    <ClInclude Include="include\Graphics\GimbleMultiRenderTarget.h" />
+    <ClInclude Include="include\Graphics\GimblePixelFormat.h" />
+    <ClInclude Include="include\Graphics\GimblePrimitiveTopology.h" />
+    <ClInclude Include="include\Graphics\GimbleRasterizerState.h" />
+    <ClInclude Include="include\Graphics\GimbleRenderSystem.h" />
+    <ClInclude Include="include\Graphics\GimbleRenderTarget.h" />
+    <ClInclude Include="include\Graphics\GimbleSampler.h" />
+    <ClInclude Include="include\Graphics\GimbleShader.h" />
+    <ClInclude Include="include\Graphics\GimbleShaderLoader.h" />
+    <ClInclude Include="include\Graphics\GimbleShaderResourceGroup.h" />
+    <ClInclude Include="include\Graphics\GimbleTexture.h" />
+    <ClInclude Include="include\Graphics\GimbleVertexElement.h" />
+    <ClInclude Include="include\Graphics\GimbleTextureLoader.h" />
+    <ClInclude Include="include\Input\GimbleInputSystem.h" />
+    <ClInclude Include="include\Physics\GimbleBoxShape.h" />
+    <ClInclude Include="include\Physics\GimbleBroadphase.h" />
+    <ClInclude Include="include\Physics\GimbleCollisionObject.h" />
+    <ClInclude Include="include\Physics\GimbleCollisionShape.h" />
+    <ClInclude Include="include\Physics\GimbleCollisionSolver.h" />
+    <ClInclude Include="include\Physics\GimbleCollisionWorld.h" />
+    <ClInclude Include="include\Physics\GimbleContact.h" />
+    <ClInclude Include="include\Physics\GimbleContactManifold.h" />
+    <ClInclude Include="include\Physics\GimbleRevoluteJoint.h" />
+    <ClInclude Include="include\Physics\GimbleJoint.h" />
+    <ClInclude Include="include\Physics\GimbleMPR.h" />
+    <ClInclude Include="include\Physics\GimblePairCache.h" />
+    <ClInclude Include="include\Physics\GimbleRigidBody.h" />
+    <ClInclude Include="include\Physics\GimbleSAP.h" />
+    <ClInclude Include="include\Physics\GimbleSimulator.h" />
+    <ClInclude Include="include\Physics\GimbleSphereShape.h" />
+    <ClInclude Include="include\Script\GimbleLuaScriptEngine.h" />
+    <ClInclude Include="include\Script\GimbleScriptClass.h" />
+    <ClInclude Include="include\Script\GimbleScriptEngine.h" />
+    <ClInclude Include="include\Script\GimbleScriptFunction.h" />
+    <ClInclude Include="include\Script\GimbleScriptFunctionContext.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Game\GimbleEngine.cpp" />
+    <ClCompile Include="src\GimbleAABB.cpp" />
+    <ClCompile Include="src\GimbleConfig.cpp" />
+    <ClCompile Include="src\GimbleFileLogDevice.cpp" />
+    <ClCompile Include="src\GimbleFileResourceLocator.cpp" />
+    <ClCompile Include="src\GimbleFileResourceStream.cpp" />
+    <ClCompile Include="src\GimbleLinkedList.cpp" />
+    <ClCompile Include="src\GimbleLog.cpp" />
+    <ClCompile Include="src\GimbleMath.cpp" />
+    <ClCompile Include="src\GimbleMatrix.cpp" />
+    <ClCompile Include="src\GimbleMultiMap.cpp" />
+    <ClCompile Include="src\GimbleMutex.cpp" />
+    <ClCompile Include="src\GimbleProfiler.cpp" />
+    <ClCompile Include="src\GimbleQuaternion.cpp" />
+    <ClCompile Include="src\GimbleRenderWindow.cpp" />
+    <ClCompile Include="src\GimbleResource.cpp" />
+    <ClCompile Include="src\GimbleResourceManager.cpp" />
+    <ClCompile Include="src\GimbleSysUtils.cpp" />
+    <ClCompile Include="src\GimbleThread.cpp" />
+    <ClCompile Include="src\GimbleTimer.cpp" />
+    <ClCompile Include="src\GimbleVector2.cpp" />
+    <ClCompile Include="src\GimbleVector3.cpp" />
+    <ClCompile Include="src\GimbleVector4.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11BlendState.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11Buffer.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11ComputeShader.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11ComputeShaderLoader.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11DepthStencil.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11DepthStencilState.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11InputLayout.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11RasterizerState.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11RenderSystem.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11RenderTarget.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11Sampler.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11Shader.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11ShaderLoader.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11ShaderResourceGroup.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11Texture.cpp" />
+    <ClCompile Include="src\Graphics\D3D11\GimbleD3D11TextureLoader.cpp" />
+    <ClCompile Include="src\Graphics\GimbleColor.cpp" />
+    <ClCompile Include="src\Graphics\GimbleComputeShader.cpp" />
+    <ClCompile Include="src\Graphics\GimbleInputLayout.cpp" />
+    <ClCompile Include="src\Graphics\GimbleMaterial.cpp" />
+    <ClCompile Include="src\Graphics\GimbleMesh.cpp" />
+    <ClCompile Include="src\Graphics\GimbleModel.cpp" />
+    <ClCompile Include="src\Graphics\GimbleModelLoader.cpp" />
+    <ClCompile Include="src\Graphics\GimbleRenderSystem.cpp" />
+    <ClCompile Include="src\Graphics\GimbleShader.cpp" />
+    <ClCompile Include="src\Graphics\GimbleTexture.cpp" />
+    <ClCompile Include="src\Graphics\GimbleMaterialLoader.cpp" />
+    <ClCompile Include="src\Input\GimbleInputSystem.cpp" />
+    <ClCompile Include="src\Physics\GimbleBoxShape.cpp" />
+    <ClCompile Include="src\Physics\GimbleBroadphase.cpp" />
+    <ClCompile Include="src\Physics\GimbleCollisionObject.cpp" />
+    <ClCompile Include="src\Physics\GimbleCollisionShape.cpp" />
+    <ClCompile Include="src\Physics\GimbleCollisionSolver.cpp" />
+    <ClCompile Include="src\Physics\GimbleCollisionWorld.cpp" />
+    <ClCompile Include="src\Physics\GimbleContactManifold.cpp" />
+    <ClCompile Include="src\Physics\GimbleMPR.cpp" />
+    <ClCompile Include="src\Physics\GimblePairCache.cpp" />
+    <ClCompile Include="src\Physics\GimbleRevoluteJoint.cpp" />
+    <ClCompile Include="src\Physics\GimbleRigidBody.cpp" />
+    <ClCompile Include="src\Physics\GimbleSAP.cpp" />
+    <ClCompile Include="src\Physics\GimbleSimulator.cpp" />
+    <ClCompile Include="src\Physics\GimbleSphereShape.cpp" />
+    <ClCompile Include="src\Script\GimbleLuaScriptEngine.cpp" />
+    <ClCompile Include="src\Script\GimbleScriptEngine.cpp" />
+    <ClCompile Include="src\Script\GimbleScriptFunction.cpp" />
+    <ClCompile Include="src\Script\GimbleScriptFunctionContext.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

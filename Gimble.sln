@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gimble", "Gimble\Gimble.vcxproj", "{46410483-1B5B-41E4-92C5-6CCBD31D8D4B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GimbleTest", "GimbleTest\GimbleTest.vcxproj", "{2BC1E33F-8ACC-4E3D-9BF9-3EA105E105DE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GimbleRenderDev", "GimbleRenderDev\GimbleRenderDev.vcxproj", "{ED33C1D2-42EF-487D-9A9B-72B10110852E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46410483-1B5B-41E4-92C5-6CCBD31D8D4B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{46410483-1B5B-41E4-92C5-6CCBD31D8D4B}.Debug|Win32.Build.0 = Debug|Win32
+		{46410483-1B5B-41E4-92C5-6CCBD31D8D4B}.Release|Win32.ActiveCfg = Release|Win32
+		{46410483-1B5B-41E4-92C5-6CCBD31D8D4B}.Release|Win32.Build.0 = Release|Win32
+		{2BC1E33F-8ACC-4E3D-9BF9-3EA105E105DE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2BC1E33F-8ACC-4E3D-9BF9-3EA105E105DE}.Debug|Win32.Build.0 = Debug|Win32
+		{2BC1E33F-8ACC-4E3D-9BF9-3EA105E105DE}.Release|Win32.ActiveCfg = Release|Win32
+		{2BC1E33F-8ACC-4E3D-9BF9-3EA105E105DE}.Release|Win32.Build.0 = Release|Win32
+		{ED33C1D2-42EF-487D-9A9B-72B10110852E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ED33C1D2-42EF-487D-9A9B-72B10110852E}.Debug|Win32.Build.0 = Debug|Win32
+		{ED33C1D2-42EF-487D-9A9B-72B10110852E}.Release|Win32.ActiveCfg = Release|Win32
+		{ED33C1D2-42EF-487D-9A9B-72B10110852E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

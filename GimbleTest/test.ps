@@ -1,0 +1,24 @@
+
+struct PS_INPUT
+{
+	float3 normal : NORMAL;
+	float2 texcoord : TEXCOORD0;
+};
+
+float4 P(PS_INPUT Input) : SV_TARGET
+{
+	float3 ldir = normalize(float3(-1,1,-1));
+	float t = dot(Input.normal, ldir);
+	t = t*.5 + .5;
+
+	float4 amb;
+	amb.rgb = .4;
+	amb.a = 0;
+
+	float4 rc = saturate((float4(t, t, t, 1) + amb));
+	rc.rgb *= .8;
+
+	return rc;
+}
+
+gimble:Pixel ps_4_0 P

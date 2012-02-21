@@ -1,0 +1,590 @@
+
+#ifndef _GIMBLE_D3D11UTILS_
+#define _GIMBLE_D3D11UTILS_
+
+#include "GimbleReqs.h"
+#include "Graphics/D3D11/GimbleD3D11Reqs.h"
+#include "Graphics/GimbleDepthStencilState.h"
+#include "Graphics/GimbleRasterizerState.h"
+#include "Graphics/GimbleBlendState.h"
+#include "Graphics/GimbleSampler.h"
+#include "Graphics/GimbleVertexElement.h"
+#include "Graphics/GimbleBuffer.h"
+#include "Graphics/GimbleRenderTarget.h"
+#include "Graphics/GimblePixelFormat.h"
+#include "Graphics/GimblePrimitiveTopology.h"
+
+namespace Gimble
+{
+	namespace Graphics
+	{
+		class D3D11Utils
+		{
+		public:
+			static D3D11_TEXTURE_ADDRESS_MODE getAddressMode(Sampler::AddressMode mode)
+			{
+				switch (mode)
+				{
+				case Sampler::ADDRESS_WRAP:
+					return D3D11_TEXTURE_ADDRESS_WRAP;
+				case Sampler::ADDRESS_MIRROR:
+					return D3D11_TEXTURE_ADDRESS_MIRROR;
+				case Sampler::ADDRESS_CLAMP:
+					return D3D11_TEXTURE_ADDRESS_CLAMP;
+				case Sampler::ADDRESS_BORDER:
+					return D3D11_TEXTURE_ADDRESS_BORDER;
+				case Sampler::ADDRESS_MIRROR_ONCE:
+					return D3D11_TEXTURE_ADDRESS_MIRROR_ONCE;
+				}
+
+				return D3D11_TEXTURE_ADDRESS_WRAP;
+			}
+
+			static D3D11_FILTER getFilter(Sampler::Filter filter)
+			{
+				switch (filter)
+				{
+				case Sampler::FILTER_MIN_MAG_MIP_POINT:
+					return D3D11_FILTER_MIN_MAG_MIP_POINT;
+				case Sampler::FILTER_MIN_MAG_POINT_MIP_LINEAR:
+					return D3D11_FILTER_MIN_MAG_POINT_MIP_LINEAR;
+				case Sampler::FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT:
+					return D3D11_FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT;
+				case Sampler::FILTER_MIN_POINT_MAG_MIP_LINEAR:
+					return D3D11_FILTER_MIN_POINT_MAG_MIP_LINEAR;
+				case Sampler::FILTER_MIN_LINEAR_MAG_MIP_POINT:
+					return D3D11_FILTER_MIN_LINEAR_MAG_MIP_POINT;
+				case Sampler::FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR:
+					return D3D11_FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR;
+				case Sampler::FILTER_MIN_MAG_LINEAR_MIP_POINT:
+					return D3D11_FILTER_MIN_MAG_LINEAR_MIP_POINT;
+				case Sampler::FILTER_MIN_MAG_MIP_LINEAR:
+					return D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+				case Sampler::FILTER_ANISOTROPIC:
+					return D3D11_FILTER_ANISOTROPIC;
+				case Sampler::FILTER_COMPARISON_MIN_MAG_MIP_POINT:
+					return D3D11_FILTER_COMPARISON_MIN_MAG_MIP_POINT;
+				case Sampler::FILTER_COMPARISON_MIN_MAG_POINT_MIP_LINEAR:
+					return D3D11_FILTER_COMPARISON_MIN_MAG_POINT_MIP_LINEAR;
+				case Sampler::FILTER_COMPARISON_MIN_POINT_MAG_LINEAR_MIP_POINT:
+					return D3D11_FILTER_COMPARISON_MIN_POINT_MAG_LINEAR_MIP_POINT;
+				case Sampler::FILTER_COMPARISON_MIN_POINT_MAG_MIP_LINEAR:
+					return D3D11_FILTER_COMPARISON_MIN_POINT_MAG_MIP_LINEAR;
+				case Sampler::FILTER_COMPARISON_MIN_LINEAR_MAG_MIP_POINT:
+					return D3D11_FILTER_COMPARISON_MIN_LINEAR_MAG_MIP_POINT;
+				case Sampler::FILTER_COMPARISON_MIN_LINEAR_MAG_POINT_MIP_LINEAR:
+					return D3D11_FILTER_COMPARISON_MIN_LINEAR_MAG_POINT_MIP_LINEAR;
+				case Sampler::FILTER_COMPARISON_MIN_MAG_LINEAR_MIP_POINT:
+					return D3D11_FILTER_COMPARISON_MIN_MAG_LINEAR_MIP_POINT;
+				case Sampler::FILTER_COMPARISON_MIN_MAG_MIP_LINEAR:
+					return D3D11_FILTER_COMPARISON_MIN_MAG_MIP_LINEAR;
+				case Sampler::FILTER_COMPARISON_ANISOTROPIC:
+					return D3D11_FILTER_COMPARISON_ANISOTROPIC;
+				}
+
+				return D3D11_FILTER_MIN_MAG_MIP_POINT;
+			}
+
+			static D3D11_BLEND_OP getBlendOp(BlendState::BlendOp op)
+			{
+				switch (op)
+				{
+				case BlendState::BLENDOP_ADD:
+					return D3D11_BLEND_OP_ADD;
+				case BlendState::BLENDOP_SUBTRACT:
+					return D3D11_BLEND_OP_SUBTRACT;
+				case BlendState::BLENDOP_REV_SUBTRACT:
+					return D3D11_BLEND_OP_REV_SUBTRACT;
+				case BlendState::BLENDOP_MIN:
+					return D3D11_BLEND_OP_MIN;
+				case BlendState::BLENDOP_MAX:
+					return D3D11_BLEND_OP_MAX;
+				}
+
+				return D3D11_BLEND_OP_ADD;
+			}
+
+			static D3D11_BLEND getBlend(BlendState::BlendType blend)
+			{
+				switch (blend)
+				{
+				case BlendState::BLEND_ZERO:
+					return D3D11_BLEND_ZERO;
+				case BlendState::BLEND_ONE:
+					return D3D11_BLEND_ONE;
+				case BlendState::BLEND_SRC_COLOR:
+					return D3D11_BLEND_SRC_COLOR;
+				case BlendState::BLEND_INV_SRC_COLOR:
+					return D3D11_BLEND_INV_SRC_COLOR;
+				case BlendState::BLEND_SRC_ALPHA:
+					return D3D11_BLEND_SRC_ALPHA;
+				case BlendState::BLEND_INV_SRC_ALPHA:
+					return D3D11_BLEND_INV_SRC_ALPHA;
+				case BlendState::BLEND_DEST_ALPHA:
+					return D3D11_BLEND_DEST_ALPHA;
+				case BlendState::BLEND_INV_DEST_ALPHA:
+					return D3D11_BLEND_INV_DEST_ALPHA;
+				case BlendState::BLEND_DEST_COLOR:
+					return D3D11_BLEND_DEST_COLOR;
+				case BlendState::BLEND_INV_DEST_COLOR:
+					return D3D11_BLEND_INV_DEST_COLOR;
+				case BlendState::BLEND_SRC_ALPHA_CLAMP:
+					return D3D11_BLEND_SRC_ALPHA_SAT;
+				case BlendState::BLEND_BLEND_FACTOR:
+					return D3D11_BLEND_BLEND_FACTOR;
+				case BlendState::BLEND_INV_BLEND_FACTOR:
+					return D3D11_BLEND_INV_BLEND_FACTOR;
+				case BlendState::BLEND_SRC1_COLOR:
+					return D3D11_BLEND_SRC1_COLOR;
+				case BlendState::BLEND_INV_SRC1_COLOR:
+					return D3D11_BLEND_INV_SRC1_COLOR;
+				case BlendState::BLEND_SRC1_ALPHA:
+					return D3D11_BLEND_SRC1_ALPHA;
+				case BlendState::BLEND_INV_SRC1_ALPHA:
+					return D3D11_BLEND_INV_SRC1_ALPHA;
+				}
+
+				return D3D11_BLEND_ZERO;
+			}
+
+			static D3D11_FILL_MODE getFillMode(RasterizerState::FillMode mode)
+			{
+				switch (mode)
+				{
+				case RasterizerState::FILLMODE_SOLID:
+					return D3D11_FILL_SOLID;
+				case RasterizerState::FILLMODE_WIREFRAME:
+					return D3D11_FILL_WIREFRAME;
+				}
+
+				return D3D11_FILL_SOLID;
+			}
+
+			static D3D11_CULL_MODE getCullMode(RasterizerState::CullMode mode)
+			{
+				switch (mode)
+				{
+				case RasterizerState::CULLMODE_BACK:
+					return D3D11_CULL_BACK;
+				case RasterizerState::CULLMODE_FRONT:
+					return D3D11_CULL_FRONT;
+				case RasterizerState::CULLMODE_NONE:
+					return D3D11_CULL_NONE;
+				}
+
+				return D3D11_CULL_BACK;
+			}
+
+			static D3D11_STENCIL_OP getStencilOp(DepthStencilState::StencilOp op)
+			{
+				switch (op)
+				{
+				case DepthStencilState::STENCILOP_KEEP:
+					return D3D11_STENCIL_OP_KEEP;
+				case DepthStencilState::STENCILOP_ZERO:
+					return D3D11_STENCIL_OP_ZERO;
+				case DepthStencilState::STENCILOP_REPLACE:
+					return D3D11_STENCIL_OP_REPLACE;
+				case DepthStencilState::STENCILOP_INCR_CLAMP:
+					return D3D11_STENCIL_OP_INCR_SAT;
+				case DepthStencilState::STENCILOP_DECR_CLAMP:
+					return D3D11_STENCIL_OP_DECR_SAT;
+				case DepthStencilState::STENCILOP_INVERT:
+					return D3D11_STENCIL_OP_INVERT;
+				case DepthStencilState::STENCILOP_INCR:
+					return D3D11_STENCIL_OP_INCR;
+				case DepthStencilState::STENCILOP_DECR:
+					return D3D11_STENCIL_OP_DECR;
+				}
+
+				return D3D11_STENCIL_OP_KEEP;
+			}
+
+			static D3D11_DEPTH_WRITE_MASK getDepthWriteMask(DepthStencilState::DepthWriteMask mask)
+			{
+				switch (mask)
+				{
+				case DepthStencilState::DEPTHWRITEMASK_ZERO:
+					return D3D11_DEPTH_WRITE_MASK_ZERO;
+				case DepthStencilState::DEPTHWRITEMASK_ALL:
+					return D3D11_DEPTH_WRITE_MASK_ALL;
+				}
+
+				return D3D11_DEPTH_WRITE_MASK_ZERO;
+			}
+
+			static D3D11_COMPARISON_FUNC getComparisonFunc(ComparisonFunc func)
+			{
+				switch (func)
+				{
+				case COMP_NEVER:
+					return D3D11_COMPARISON_NEVER;
+				case COMP_LESS:
+					return D3D11_COMPARISON_LESS;
+				case COMP_EQUAL:
+					return D3D11_COMPARISON_EQUAL;
+				case COMP_LESS_EQUAL:
+					return D3D11_COMPARISON_LESS_EQUAL;
+				case COMP_GREATER:
+					return D3D11_COMPARISON_GREATER;
+				case COMP_NOT_EQUAL:
+					return D3D11_COMPARISON_NOT_EQUAL;
+				case COMP_GREATER_EQUAL:
+					return D3D11_COMPARISON_GREATER_EQUAL;
+				case COMP_ALWAYS:
+					return D3D11_COMPARISON_ALWAYS;
+				}
+
+				return D3D11_COMPARISON_NEVER;
+			}
+
+			static D3D11_BUFFER_DESC getDesc(Buffer::BufferType type, Buffer::BufferUsage usage, uint size, uint stride)
+			{
+				D3D11_BUFFER_DESC desc;
+				ZeroMemory(&desc, sizeof(desc));
+				desc.ByteWidth = size;
+				desc.MiscFlags = 0;
+
+				desc.BindFlags = D3D11Utils::getBindFlag(type);
+
+				if (type < Buffer::BUFFERTYPE_COMPUTE_STRUCTURED)
+				{
+					desc.CPUAccessFlags = 0;
+					desc.Usage = D3D11_USAGE_DEFAULT;
+					if (usage & Buffer::BUFFERUSAGE_DYNAMIC)
+					{
+						desc.CPUAccessFlags |= D3D11_CPU_ACCESS_WRITE;
+						desc.Usage = D3D11_USAGE_DYNAMIC;
+					}
+				}
+				else
+				{
+					if (type == Buffer::BUFFERTYPE_COMPUTE_STRUCTURED || type == Buffer::BUFFERTYPE_COMPUTE_STRUCTURED_UNORDERED)
+					{
+						desc.MiscFlags = D3D11_RESOURCE_MISC_BUFFER_STRUCTURED;
+						desc.StructureByteStride = stride;
+					}
+					else if (type == Buffer::BUFFERTYPE_COMPUTE_RAW || type == Buffer::BUFFERTYPE_COMPUTE_RAW_UNORDERED)
+						desc.MiscFlags = D3D11_RESOURCE_MISC_BUFFER_ALLOW_RAW_VIEWS;
+				}
+
+				return desc;
+			}
+
+			static uint getBindFlag(Buffer::BufferType type)
+			{
+				switch (type)
+				{
+				case Buffer::BUFFERTYPE_VERTEX:
+					return D3D11_BIND_VERTEX_BUFFER;
+				case Buffer::BUFFERTYPE_INDEX:
+					return D3D11_BIND_INDEX_BUFFER;
+				case Buffer::BUFFERTYPE_CONSTANT:
+					return D3D11_BIND_CONSTANT_BUFFER;
+				case Buffer::BUFFERTYPE_SHADERRESOURCE:
+					return D3D11_BIND_SHADER_RESOURCE;
+				case Buffer::BUFFERTYPE_COMPUTE_STRUCTURED:
+					return D3D11_BIND_SHADER_RESOURCE;
+				case Buffer::BUFFERTYPE_COMPUTE_STRUCTURED_UNORDERED:
+					return (D3D11_BIND_SHADER_RESOURCE | D3D11_BIND_UNORDERED_ACCESS);
+				case Buffer::BUFFERTYPE_COMPUTE_RAW:
+					return (D3D11_BIND_SHADER_RESOURCE | D3D11_BIND_INDEX_BUFFER | D3D11_BIND_VERTEX_BUFFER);
+				case Buffer::BUFFERTYPE_COMPUTE_RAW_UNORDERED:
+					return (D3D11_BIND_SHADER_RESOURCE | D3D11_BIND_INDEX_BUFFER | D3D11_BIND_VERTEX_BUFFER | D3D11_BIND_UNORDERED_ACCESS);
+				}
+
+				return D3D11_BIND_VERTEX_BUFFER;
+			}
+
+			static DXGI_FORMAT getVertexElementType(VertexElementType type)
+			{
+				switch (type)
+				{
+				case VERTEXELEMENT_FLOAT1:
+					return DXGI_FORMAT_R32_FLOAT;
+				case VERTEXELEMENT_FLOAT2:
+					return DXGI_FORMAT_R32G32_FLOAT;
+				case VERTEXELEMENT_FLOAT3:
+					return DXGI_FORMAT_R32G32B32_FLOAT;
+				case VERTEXELEMENT_FLOAT4:
+					return DXGI_FORMAT_R32G32B32A32_FLOAT;
+				case VERTEXELEMENT_COLOR:
+					return DXGI_FORMAT_R32G32B32A32_FLOAT;
+				}
+
+				return DXGI_FORMAT_R32G32B32A32_FLOAT;
+			}
+
+			static LPCSTR getSemantic(VertexElementSemantic semantic)
+			{
+				switch (semantic)
+				{
+				case VERTEXELEMENTSEMANTIC_POSITION:
+					return "POSITION";
+				case VERTEXELEMENTSEMANTIC_BLENDWEIGHTS:
+					return"BLENDWEIGHT";
+				case VERTEXELEMENTSEMANTIC_BLENDINDICES:
+					return"BLENDINDICES";
+				case VERTEXELEMENTSEMANTIC_NORMAL:
+					return"NORMAL";
+				case VERTEXELEMENTSEMANTIC_DIFFUSE:
+					return"COLOR";
+				case VERTEXELEMENTSEMANTIC_SPECULAR:
+					return"COLOR";
+				case VERTEXELEMENTSEMANTIC_TEXTURECOORDS:
+					return"TEXCOORD";
+				case VERTEXELEMENTSEMANTIC_BINORMAL:
+					return"BINORMAL";
+				case VERTEXELEMENTSEMANTIC_TANGENT:
+					return"TANGENT";
+				}
+
+				return "POSITION";
+			}
+
+			static D3D11_PRIMITIVE_TOPOLOGY getPrimitiveTopology(PrimitiveTopology topology)
+			{
+				switch (topology)
+				{
+				case PRIMITIVETOPOLOGY_UNDEFINED:
+					return D3D11_PRIMITIVE_TOPOLOGY_UNDEFINED;
+				case PRIMITIVETOPOLOGY_POINTLIST:
+					return D3D11_PRIMITIVE_TOPOLOGY_POINTLIST;
+				case PRIMITIVETOPOLOGY_LINELIST:
+					return D3D11_PRIMITIVE_TOPOLOGY_LINELIST;
+				case PRIMITIVETOPOLOGY_LINESTRIP:
+					return D3D11_PRIMITIVE_TOPOLOGY_LINESTRIP;
+				case PRIMITIVETOPOLOGY_TRIANGLELIST:
+					return D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+				case PRIMITIVETOPOLOGY_TRIANGLESTRIP:
+					return D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP;
+				case PRIMITIVETOPOLOGY_LINELIST_ADJ:
+					return D3D11_PRIMITIVE_TOPOLOGY_LINELIST_ADJ;
+				case PRIMITIVETOPOLOGY_LINESTRIP_ADJ:
+					return D3D11_PRIMITIVE_TOPOLOGY_LINESTRIP_ADJ;
+				case PRIMITIVETOPOLOGY_TRIANGLELIST_ADJ:
+					return D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST_ADJ;
+				case PRIMITIVETOPOLOGY_TRIANGLESTRIP_ADJ:
+					return D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP_ADJ;
+				}
+
+				return D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
+			}
+
+			static DXGI_FORMAT getPixelFormat(PixelFormat format)
+			{
+				switch (format)
+				{
+				case PIXELFORMAT_UNKNOWN:
+					return DXGI_FORMAT_UNKNOWN;
+				case PIXELFORMAT_R32G32B32A32_TYPELESS:
+					return DXGI_FORMAT_R32G32B32A32_TYPELESS;
+				case PIXELFORMAT_R32G32B32A32_FLOAT:
+					return DXGI_FORMAT_R32G32B32A32_FLOAT;
+				case PIXELFORMAT_R32G32B32A32_UINT:
+					return DXGI_FORMAT_R32G32B32A32_UINT;
+				case PIXELFORMAT_R32G32B32A32_SINT:
+					return DXGI_FORMAT_R32G32B32A32_SINT;
+				case PIXELFORMAT_R32G32B32_TYPELESS:
+					return DXGI_FORMAT_R32G32B32_TYPELESS;
+				case PIXELFORMAT_R32G32B32_FLOAT:
+					return DXGI_FORMAT_R32G32B32_FLOAT;
+				case PIXELFORMAT_R32G32B32_UINT:
+					return DXGI_FORMAT_R32G32B32_UINT;
+				case PIXELFORMAT_R32G32B32_SINT:
+					return DXGI_FORMAT_R32G32B32_SINT;
+				case PIXELFORMAT_R16G16B16A16_TYPELESS:
+					return DXGI_FORMAT_R16G16B16A16_TYPELESS;
+				case PIXELFORMAT_R16G16B16A16_FLOAT:
+					return DXGI_FORMAT_R16G16B16A16_FLOAT;
+				case PIXELFORMAT_R16G16B16A16_UNORM:
+					return DXGI_FORMAT_R16G16B16A16_UNORM;
+				case PIXELFORMAT_R16G16B16A16_UINT:
+					return DXGI_FORMAT_R16G16B16A16_UINT;
+				case PIXELFORMAT_R16G16B16A16_SNORM:
+					return DXGI_FORMAT_R16G16B16A16_SNORM;
+			    case PIXELFORMAT_R16G16B16A16_SINT:
+					return DXGI_FORMAT_R16G16B16A16_SINT;
+			    case PIXELFORMAT_R32G32_TYPELESS:
+					return DXGI_FORMAT_R32G32_TYPELESS;
+			    case PIXELFORMAT_R32G32_FLOAT:
+					return DXGI_FORMAT_R32G32_FLOAT;
+			    case PIXELFORMAT_R32G32_UINT:
+					return DXGI_FORMAT_R32G32_UINT;
+			    case PIXELFORMAT_R32G32_SINT:
+					return DXGI_FORMAT_R32G32_SINT;
+			    case PIXELFORMAT_R32G8X24_TYPELESS:
+					return DXGI_FORMAT_R32G8X24_TYPELESS;
+			    case PIXELFORMAT_D32_FLOAT_S8X24_UINT:
+					return DXGI_FORMAT_D32_FLOAT_S8X24_UINT;
+			    case PIXELFORMAT_R32_FLOAT_X8X24_TYPELESS:
+					return DXGI_FORMAT_R32_FLOAT_X8X24_TYPELESS;
+			    case PIXELFORMAT_X32_TYPELESS_G8X24_UINT:
+					return DXGI_FORMAT_X32_TYPELESS_G8X24_UINT;
+			    case PIXELFORMAT_R10G10B10A2_TYPELESS:
+					return DXGI_FORMAT_R10G10B10A2_TYPELESS;
+			    case PIXELFORMAT_R10G10B10A2_UNORM:
+					return DXGI_FORMAT_R10G10B10A2_UNORM;
+			    case PIXELFORMAT_R10G10B10A2_UINT:
+					return DXGI_FORMAT_R10G10B10A2_UINT;
+			    case PIXELFORMAT_R11G11B10_FLOAT:
+					return DXGI_FORMAT_R11G11B10_FLOAT;
+			    case PIXELFORMAT_R8G8B8A8_TYPELESS:
+					return DXGI_FORMAT_R8G8B8A8_TYPELESS;
+			    case PIXELFORMAT_R8G8B8A8_UNORM:
+					return DXGI_FORMAT_R8G8B8A8_UNORM;
+			    case PIXELFORMAT_R8G8B8A8_UNORM_SRGB:
+					return DXGI_FORMAT_R8G8B8A8_UNORM_SRGB;
+			    case PIXELFORMAT_R8G8B8A8_UINT:
+					return DXGI_FORMAT_R8G8B8A8_UINT;
+			    case PIXELFORMAT_R8G8B8A8_SNORM:
+					return DXGI_FORMAT_R8G8B8A8_SNORM;
+			    case PIXELFORMAT_R8G8B8A8_SINT:
+					return DXGI_FORMAT_R8G8B8A8_SINT;
+			    case PIXELFORMAT_R16G16_TYPELESS:
+					return DXGI_FORMAT_R16G16_TYPELESS;
+			    case PIXELFORMAT_R16G16_FLOAT:
+					return DXGI_FORMAT_R16G16_FLOAT;
+			    case PIXELFORMAT_R16G16_UNORM:
+					return DXGI_FORMAT_R16G16_UNORM;
+			    case PIXELFORMAT_R16G16_UINT:
+					return DXGI_FORMAT_R16G16_UINT;
+			    case PIXELFORMAT_R16G16_SNORM:
+					return DXGI_FORMAT_R16G16_SNORM;
+			    case PIXELFORMAT_R16G16_SINT:
+					return DXGI_FORMAT_R16G16_SINT;
+			    case PIXELFORMAT_R32_TYPELESS:
+					return DXGI_FORMAT_R32_TYPELESS;
+			    case PIXELFORMAT_D32_FLOAT:
+					return DXGI_FORMAT_D32_FLOAT;
+			    case PIXELFORMAT_R32_FLOAT:
+					return DXGI_FORMAT_R32_FLOAT;
+			    case PIXELFORMAT_R32_UINT:
+					return DXGI_FORMAT_R32_UINT;
+			    case PIXELFORMAT_R32_SINT:
+					return DXGI_FORMAT_R32_SINT;
+			    case PIXELFORMAT_R24G8_TYPELESS:
+					return DXGI_FORMAT_R24G8_TYPELESS;
+			    case PIXELFORMAT_D24_UNORM_S8_UINT:
+					return DXGI_FORMAT_D24_UNORM_S8_UINT;
+			    case PIXELFORMAT_R24_UNORM_X8_TYPELESS:
+					return DXGI_FORMAT_R24_UNORM_X8_TYPELESS;
+			    case PIXELFORMAT_X24_TYPELESS_G8_UINT:
+					return DXGI_FORMAT_X24_TYPELESS_G8_UINT;
+			    case PIXELFORMAT_R8G8_TYPELESS:
+					return DXGI_FORMAT_R8G8_TYPELESS;
+			    case PIXELFORMAT_R8G8_UNORM:
+					return DXGI_FORMAT_R8G8_UNORM;
+			    case PIXELFORMAT_R8G8_UINT:
+					return DXGI_FORMAT_R8G8_UINT;
+			    case PIXELFORMAT_R8G8_SNORM:
+					return DXGI_FORMAT_R8G8_SNORM;
+			    case PIXELFORMAT_R8G8_SINT:
+					return DXGI_FORMAT_R8G8_SINT;
+			    case PIXELFORMAT_R16_TYPELESS:
+					return DXGI_FORMAT_R16_TYPELESS;
+			    case PIXELFORMAT_R16_FLOAT:
+					return DXGI_FORMAT_R16_FLOAT;
+			    case PIXELFORMAT_D16_UNORM:
+					return DXGI_FORMAT_D16_UNORM;
+			    case PIXELFORMAT_R16_UNORM:
+					return DXGI_FORMAT_R16_UNORM;
+			    case PIXELFORMAT_R16_UINT:
+					return DXGI_FORMAT_R16_UINT;
+			    case PIXELFORMAT_R16_SNORM:
+					return DXGI_FORMAT_R16_SNORM;
+			    case PIXELFORMAT_R16_SINT:
+					return DXGI_FORMAT_R16_SINT;
+			    case PIXELFORMAT_R8_TYPELESS:
+					return DXGI_FORMAT_R8_TYPELESS;
+			    case PIXELFORMAT_R8_UNORM:
+					return DXGI_FORMAT_R8_UNORM;
+			    case PIXELFORMAT_R8_UINT:
+					return DXGI_FORMAT_R8_UINT;
+			    case PIXELFORMAT_R8_SNORM:
+					return DXGI_FORMAT_R8_SNORM;
+			    case PIXELFORMAT_R8_SINT:
+					return DXGI_FORMAT_R8_SINT;
+			    case PIXELFORMAT_A8_UNORM:
+					return DXGI_FORMAT_A8_UNORM;
+			    case PIXELFORMAT_R1_UNORM:
+					return DXGI_FORMAT_R1_UNORM;
+			    case PIXELFORMAT_R9G9B9E5_SHAREDEXP:
+					return DXGI_FORMAT_R9G9B9E5_SHAREDEXP;
+			    case PIXELFORMAT_R8G8_B8G8_UNORM:
+					return DXGI_FORMAT_R8G8_B8G8_UNORM;
+			    case PIXELFORMAT_G8R8_G8B8_UNORM:
+					return DXGI_FORMAT_G8R8_G8B8_UNORM;
+			    case PIXELFORMAT_BC1_TYPELESS:
+					return DXGI_FORMAT_BC1_TYPELESS;
+			    case PIXELFORMAT_BC1_UNORM:
+					return DXGI_FORMAT_BC1_UNORM;
+			    case PIXELFORMAT_BC1_UNORM_SRGB:
+					return DXGI_FORMAT_BC1_UNORM_SRGB;
+			    case PIXELFORMAT_BC2_TYPELESS:
+					return DXGI_FORMAT_BC2_TYPELESS;
+			    case PIXELFORMAT_BC2_UNORM:
+					return DXGI_FORMAT_BC2_UNORM;
+			    case PIXELFORMAT_BC2_UNORM_SRGB:
+					return DXGI_FORMAT_BC2_UNORM_SRGB;
+			    case PIXELFORMAT_BC3_TYPELESS:
+					return DXGI_FORMAT_BC3_TYPELESS;
+			    case PIXELFORMAT_BC3_UNORM:
+					return DXGI_FORMAT_BC3_UNORM;
+			    case PIXELFORMAT_BC3_UNORM_SRGB:
+					return DXGI_FORMAT_BC3_UNORM_SRGB;
+			    case PIXELFORMAT_BC4_TYPELESS:
+					return DXGI_FORMAT_BC4_TYPELESS;
+			    case PIXELFORMAT_BC4_UNORM:
+					return DXGI_FORMAT_BC4_UNORM;
+			    case PIXELFORMAT_BC4_SNORM:
+					return DXGI_FORMAT_BC4_SNORM;
+			    case PIXELFORMAT_BC5_TYPELESS:
+					return DXGI_FORMAT_BC5_TYPELESS;
+			    case PIXELFORMAT_BC5_UNORM:
+					return DXGI_FORMAT_BC5_UNORM;
+			    case PIXELFORMAT_BC5_SNORM:
+					return DXGI_FORMAT_BC5_SNORM;
+			    case PIXELFORMAT_B5G6R5_UNORM:
+					return DXGI_FORMAT_B5G6R5_UNORM;
+			    case PIXELFORMAT_B5G5R5A1_UNORM:
+					return DXGI_FORMAT_B5G5R5A1_UNORM;
+			    case PIXELFORMAT_B8G8R8A8_UNORM:
+					return DXGI_FORMAT_B8G8R8A8_UNORM;
+			    case PIXELFORMAT_B8G8R8X8_UNORM:
+					return DXGI_FORMAT_B8G8R8X8_UNORM;
+			    case PIXELFORMAT_R10G10B10_XR_BIAS_A2_UNORM:
+					return DXGI_FORMAT_R10G10B10_XR_BIAS_A2_UNORM;
+			    case PIXELFORMAT_B8G8R8A8_TYPELESS:
+					return DXGI_FORMAT_B8G8R8A8_TYPELESS;
+			    case PIXELFORMAT_B8G8R8A8_UNORM_SRGB:
+					return DXGI_FORMAT_B8G8R8A8_UNORM_SRGB;
+			    case PIXELFORMAT_B8G8R8X8_TYPELESS:
+					return DXGI_FORMAT_B8G8R8X8_TYPELESS;
+			    case PIXELFORMAT_B8G8R8X8_UNORM_SRGB:
+					return DXGI_FORMAT_B8G8R8X8_UNORM_SRGB;
+			    case PIXELFORMAT_BC6H_TYPELESS:
+					return DXGI_FORMAT_BC6H_TYPELESS;
+			    case PIXELFORMAT_BC6H_UF16:
+					return DXGI_FORMAT_BC6H_UF16;
+			    case PIXELFORMAT_BC6H_SF16:
+					return DXGI_FORMAT_BC6H_SF16;
+			    case PIXELFORMAT_BC7_TYPELESS:
+					return DXGI_FORMAT_BC7_TYPELESS;
+			    case PIXELFORMAT_BC7_UNORM:
+					return DXGI_FORMAT_BC7_UNORM;
+			    case PIXELFORMAT_BC7_UNORM_SRGB:
+					return DXGI_FORMAT_BC7_UNORM_SRGB;
+				case PIXELFORMAT_FORCE_UINT:
+					return DXGI_FORMAT_FORCE_UINT;
+				default:
+					return DXGI_FORMAT_UNKNOWN;
+				}
+
+				return DXGI_FORMAT_UNKNOWN;
+			}
+		};
+	}
+}
+
+#endif
